@@ -1,6 +1,7 @@
+import { config } from "dotenv";
+config();
 import express from "express";
 import { connectDb } from "./data/dbConnection.js";
-import { config } from "dotenv";
 import { rootSchema } from "./schemals/schema.js";
 import { ApolloServer } from "apollo-server-express";
 import { PORT } from "./secrets.js";
@@ -8,7 +9,6 @@ import { testRedis } from "./utils/redis/redisTest.js";
 import graphqlUploadExpress from "graphql-upload/graphqlUploadExpress.mjs";
 import redisHelper from "./utils/redis/redisHelper.js";
 
-config();
 
 const app = express();
 
